@@ -1,101 +1,62 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import Slide1 from "./components/Slide1";
+import Slide2 from "./components/Slide2";
+import Slide3 from "./components/Slide3";
+import Slide4 from "./components/Slide4";
+import Slide5 from "./components/Slide5";
+import Slide6 from "./components/Slide6";
+import Slide7 from "./components/Slide7";
+import Slide8 from "./components/Slide8";
+import Slide9 from "./components/Slide9";
+import Slide10 from "./components/Slide10";
+import Slide11 from "./components/Slide11";
+import Slide12 from "./components/Slide12";
+import Slide13 from "./components/Slide13";
+import Slide14 from "./components/Slide14";
+import Slide15 from "./components/Slide15";
+import Slide16 from "./components/Slide16";
+import './styles.scss'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [slide, setSlide] = React.useState(0);
+  const totalSlides = 16; 
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  React.useEffect(() => {
+    const onKeyPress = (e: KeyboardEvent) => {
+      if (e.code === 'KeyD' || e.code === 'ArrowRight') {
+        setSlide((prevSlide) => (prevSlide < totalSlides - 1 ? prevSlide + 1 : prevSlide));
+      }
+      if (e.code === 'KeyA' || e.code === 'ArrowLeft') {
+        setSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
+      }
+    };
+
+    document.addEventListener('keydown', onKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', onKeyPress);
+    };
+  }, []);
+
+  return (
+    <div>
+      {slide === 0 && <Slide1 />}
+      {slide === 1 && <Slide2 />}
+      {slide === 2 && <Slide3 />}
+      {slide === 3 && <Slide4 />}
+      {slide === 4 && <Slide5 />}
+      {slide === 5 && <Slide6 />}
+      {slide === 6 && <Slide7 />}
+      {slide === 7 && <Slide8 />}
+      {slide === 8 && <Slide9 />}
+      {slide === 9 && <Slide10 />}
+      {slide === 10 && <Slide11 />}
+      {slide === 11 && <Slide12 />}
+      {slide === 12 && <Slide13 />}
+      {slide === 13 && <Slide14 />}
+      {slide === 14 && <Slide15 />}
+      {slide === 15 && <Slide16 />}
     </div>
   );
 }
