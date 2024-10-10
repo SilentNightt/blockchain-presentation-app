@@ -40,7 +40,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="root">
       {slide === 0 && <Slide1 />}
       {slide === 1 && <Slide2 />}
       {slide === 2 && <Slide3 />}
