@@ -16,7 +16,7 @@ function Slide3() {
             <span className='text-main'>Блокчейн-платформа Ethereum была разработана в 2015 году. Она имеет собственную криптовалюту Ether (ETH) или Ethereum</span>
         </div>
         <div className='image-content'>
-          <Image className='picture1' src={img1} alt='Ethirium'/>
+          <Image className='picture1' src={img1} alt='Ethereum'/>
           <Image className='picture2' src={img2} alt='Bitcoin'/>
         </div>
       </div>
