@@ -14,6 +14,13 @@ function Slide3() {
             </ul>
             <span className='text-main'>Биткойн создан в 2009 году и до сих пор является самой популярной криптовалютой в мире.</span>
             <span className='text-main'>Блокчейн-платформа Ethereum была разработана в 2015 году. Она имеет собственную криптовалюту Ether (ETH) или Ethereum</span>
+            <audio
+              className='audio'
+              controls
+              src="/resorses/BLOODY_STREAM.mp3">
+                  Your browser does not support the
+                  <code>audio</code> element.
+            </audio>
         </div>
         <div className='image-content'>
           <Image className='picture1' src={img1} alt='Ethereum'/>

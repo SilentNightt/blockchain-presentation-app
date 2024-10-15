@@ -11,7 +11,7 @@ function Slide1() {
           <p className="author">Степанов В.Б ИУ3-32М</p>
         </div>
         <div className="image-content">
-          <img className="picture-main" src={main.src} alt="Blockchain in Supply Chains" />
+          <Image className="picture-main" src={main} alt="Blockchain in Supply Chains" />
         </div>
       </div>
     </div>
